@@ -1,0 +1,128 @@
+@use '../../../../../styles/variables' as vars;
+
+.complete-profile-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, vars.$primary-navy 0%, vars.$primary-blue 100%);
+  padding: vars.$spacing-lg;
+}
+
+.profile-content {
+  max-width: 500px;
+  width: 100%;
+  background: vars.$white;
+  border-radius: vars.$border-radius-lg;
+  padding: vars.$spacing-xxl vars.$spacing-xl;
+  box-shadow: vars.$shadow-lg;
+
+  .avatar-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: vars.$spacing-xl;
+
+    .avatar-placeholder {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: vars.$gray-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid vars.$gray-medium;
+
+      mat-icon {
+        font-size: 60px;
+        width: 60px;
+        height: 60px;
+        color: vars.$gray-dark;
+      }
+    }
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: vars.$spacing-xl;
+
+    h1 {
+      font-size: vars.$font-size-xl;
+      font-weight: vars.$font-weight-bold;
+      color: vars.$primary-navy;
+      letter-spacing: 1px;
+    }
+  }
+
+  .profile-form {
+    .full-width {
+      width: 100%;
+      margin-bottom: vars.$spacing-md;
+    }
+
+    .submit-section {
+      display: flex;
+      justify-content: center;
+      margin-top: vars.$spacing-xxl;
+
+      .submit-button {
+        width: 64px;
+        height: 64px;
+
+        mat-icon {
+          font-size: 32px;
+          width: 32px;
+          height: 32px;
+        }
+
+        mat-spinner {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .success-card {
+    text-align: center;
+    padding: vars.$spacing-xl 0;
+
+    .success-icon {
+      margin-bottom: vars.$spacing-xl;
+
+      mat-icon {
+        font-size: 120px;
+        width: 120px;
+        height: 120px;
+        color: vars.$secondary-olive;
+      }
+    }
+
+    .success-header {
+      margin-bottom: vars.$spacing-lg;
+
+      h1 {
+        font-size: vars.$font-size-xxl;
+        font-weight: vars.$font-weight-bold;
+        color: vars.$primary-navy;
+        margin: 0;
+      }
+    }
+
+    .success-message {
+      p {
+        font-size: vars.$font-size-lg;
+        color: vars.$gray-dark;
+        margin-bottom: vars.$spacing-md;
+
+        strong {
+          color: vars.$primary-navy;
+          font-weight: vars.$font-weight-bold;
+        }
+      }
+
+      .subtitle {
+        font-size: vars.$font-size-base;
+        color: vars.$gray-medium;
+      }
+    }
+  }
+}

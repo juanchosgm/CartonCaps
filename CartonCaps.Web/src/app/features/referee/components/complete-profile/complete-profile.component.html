@@ -1,0 +1,81 @@
+<div class="complete-profile-container">
+  <div class="profile-content">
+    @if (!isSuccess()) {
+      <div class="avatar-section">
+        <div class="avatar-placeholder">
+          <mat-icon>person</mat-icon>
+        </div>
+      </div>
+      <div class="header">
+        <h1>COMPLETE PROFILE</h1>
+      </div>
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Full name</mat-label>
+          <input
+            matInput
+            formControlName="name"
+            placeholder="Enter your full name"
+            required>
+          @if (profileForm.get('name')?.invalid && profileForm.get('name')?.touched) {
+            <mat-error>{{ getErrorMessage('name') }}</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            placeholder="Enter your email"
+            required>
+          @if (profileForm.get('email')?.invalid && profileForm.get('email')?.touched) {
+            <mat-error>{{ getErrorMessage('email') }}</mat-error>
+          }
+        </mat-form-field>
+        @if (referralCode) {
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Referral code</mat-label>
+            <input
+              matInput
+              formControlName="referralCode"
+              placeholder="Enter referral code"
+              required>
+            @if (profileForm.get('referralCode')?.invalid && profileForm.get('referralCode')?.touched) {
+              <mat-error>{{ getErrorMessage('referralCode') }}</mat-error>
+            }
+          </mat-form-field>
+        }
+        <div class="submit-section">
+          <button
+            mat-fab
+            color="accent"
+            type="submit"
+            [disabled]="isSubmitting() || profileForm.invalid"
+            class="submit-button">
+            @if (isSubmitting()) {
+              <mat-spinner diameter="24"></mat-spinner>
+            } @else {
+              <mat-icon>check</mat-icon>
+            }
+          </button>
+        </div>
+      </form>
+    } @else {
+      <div class="success-card">
+        <div class="success-icon">
+          <mat-icon color="primary">check_circle</mat-icon>
+        </div>
+
+        <div class="success-header">
+          <h1>Registration Successful!</h1>
+        </div>
+
+        <div class="success-message">
+          <p>Welcome to Carton Caps, <strong>{{ registeredName() }}</strong>!</p>
+          <p class="subtitle">Your account has been created successfully.</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,61 @@
+// Carton Caps Color Palette (extraído del PDF de Livefront)
+$primary-navy: #1E3A5F;          // Azul oscuro/navy principal
+$primary-blue: #0099CC;          // Azul del header
+$secondary-olive: #7A8B3D;       // Verde oliva (fondo ilustración)
+$accent-magenta: #E91E63;        // Rosa/Magenta (botones, iconos)
+$accent-pink: #FF1744;           // Rosa intenso (share icons)
+
+// Neutrales
+$white: #FFFFFF;
+$gray-light: #F5F5F5;
+$gray-medium: #E0E0E0;
+$gray-dark: #757575;
+$black: #212121;
+
+// Backgrounds
+$background-primary: $white;
+$background-secondary: $gray-light;
+$background-olive: $secondary-olive;
+
+// Texto
+$text-primary: $black;
+$text-secondary: $gray-dark;
+$text-on-dark: $white;
+
+// Estados
+$success-color: #4CAF50;
+$error-color: #F44336;
+$warning-color: #FF9800;
+$info-color: $primary-blue;
+
+// Espaciado
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+// Typography
+$font-family-base: 'Roboto', sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;

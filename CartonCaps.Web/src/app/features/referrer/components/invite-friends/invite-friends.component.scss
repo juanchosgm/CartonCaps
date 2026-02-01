@@ -1,0 +1,150 @@
+@use '../../../../../styles/variables' as vars;
+
+.invite-friends-container {
+  min-height: 100vh;
+}
+
+.loading-state,
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: vars.$spacing-xxl;
+  text-align: center;
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: vars.$spacing-md;
+    color: vars.$error-color;
+  }
+
+  p {
+    margin: vars.$spacing-md 0;
+    color: vars.$text-secondary;
+  }
+}
+
+.content {
+  .hero-section {
+    padding: vars.$spacing-xxl vars.$spacing-lg;
+    text-align: center;
+    color: vars.$text-on-dark;
+
+    .title {
+      font-size: vars.$font-size-xxl;
+      font-weight: vars.$font-weight-bold;
+      margin-bottom: vars.$spacing-lg;
+      line-height: 1.2;
+    }
+
+    .description {
+      font-size: vars.$font-size-base;
+      margin-bottom: vars.$spacing-xl;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .referral-code-card {
+      background: vars.$white;
+      border-radius: vars.$border-radius-lg;
+      padding: vars.$spacing-lg;
+      margin: vars.$spacing-xl auto;
+      max-width: 400px;
+      box-shadow: vars.$shadow-md;
+
+      label {
+        display: block;
+        font-size: vars.$font-size-sm;
+        color: vars.$text-secondary;
+        margin-bottom: vars.$spacing-sm;
+        text-align: left;
+      }
+
+      .code-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: vars.$spacing-md;
+        background: vars.$gray-light;
+        border-radius: vars.$border-radius-md;
+
+        .code {
+          font-size: vars.$font-size-xl;
+          font-weight: vars.$font-weight-bold;
+          color: vars.$text-primary;
+          letter-spacing: 2px;
+        }
+
+        button {
+          color: vars.$primary-blue;
+        }
+      }
+    }
+
+    .share-button {
+      margin-top: vars.$spacing-lg;
+    }
+  }
+
+  .referrals-section {
+    padding: vars.$spacing-xl vars.$spacing-lg;
+    background: vars.$white;
+
+    .section-title {
+      font-size: vars.$font-size-sm;
+      font-weight: vars.$font-weight-bold;
+      color: vars.$text-secondary;
+      letter-spacing: 1px;
+      margin-bottom: vars.$spacing-lg;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: vars.$spacing-xxl;
+
+      p {
+        margin-bottom: vars.$spacing-sm;
+      }
+
+      .empty-subtitle {
+        color: vars.$text-secondary;
+        font-size: vars.$font-size-sm;
+      }
+    }
+
+    .referral-list {
+      .referral-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: vars.$spacing-md;
+        border-bottom: 1px solid vars.$gray-medium;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .name {
+          font-weight: vars.$font-weight-medium;
+        }
+
+        .status {
+          padding: vars.$spacing-xs vars.$spacing-md;
+          border-radius: vars.$border-radius-full;
+          font-size: vars.$font-size-sm;
+          background: vars.$gray-medium;
+          color: vars.$text-secondary;
+
+          &.complete {
+            background: vars.$success-color;
+            color: vars.$white;
+          }
+        }
+      }
+    }
+  }
+}

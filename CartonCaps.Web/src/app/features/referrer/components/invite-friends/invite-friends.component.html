@@ -1,0 +1,67 @@
+<div class="invite-friends-container">
+  @if (referralService.isLoading()) {
+    <div class="loading-state">
+      <mat-spinner></mat-spinner>
+      <p>Loading your referrals...</p>
+    </div>
+  }
+  @if (errorMessage()) {
+    <div class="error-state">
+      <mat-icon>error_outline</mat-icon>
+      <p>{{ errorMessage() }}</p>
+      <button mat-raised-button color="primary" (click)="loadData()">Retry</button>
+    </div>
+  }
+  @if (!referralService.isLoading() && !errorMessage()) {
+    <div class="content">
+      <div class="hero-section olive-background">
+        <h1 class="title">INVITE YOUR FRIENDS,<br>HELP YOUR SCHOOL</h1>
+        <p class="description">
+          When you share your referral code with friends, you'll be spreading the Carton Caps love and helping our schools!
+        </p>
+        <div class="referral-code-card">
+          <label>Your referral code</label>
+          <div class="code-container">
+            <span class="code">{{ userCode }}</span>
+            <button
+              mat-button
+              (click)="onCopyCode()"
+              [disabled]="isCopying()">
+              @if (isCopying()) {
+                <mat-spinner diameter="16"></mat-spinner>
+              } @else {
+                <ng-container>
+                  <mat-icon>content_copy</mat-icon>
+                  Copy Link
+                </ng-container>
+              }
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="referrals-section">
+        <h2 class="section-title">MY REFERRALS</h2>
+        @if (!hasReferrals()) {
+          <div class="empty-state">
+            <p>You haven't referred any friends yet!</p>
+            <p class="empty-subtitle">
+              When you invite friends to Carton Caps, you'll be able to see them here.
+            </p>
+          </div>
+        }
+        @if (hasReferrals()) {
+          <div class="referral-list">
+            @for (referral of referralService.referrals(); track referral.name) {
+              <div class="referral-item">
+                <span class="name">{{ referral.name }}</span>
+                <span class="status" [class.complete]="referral.status === 2">
+                  {{ getStatusLabel(referral.status) }}
+                </span>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
